@@ -1,137 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PetHeaven - Home</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PetHeaven - Home</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
-</head>
+  <body>
+    <section class="hero">
+      <video autoplay muted playsinline class="hero-video">
+        <!-- <source src="assets/pets.mp4" type="video/mp4" media="(max-width: 767px)"> -->
+        <source src="assets/intro-video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <!-- <img src="assets/www.reallygreatsite.som.png" class="hero-video"> -->
 
-<body>
-  <section class="hero">
-    <video autoplay muted playsinline class="hero-video">
-      <!-- <source src="assets/pets.mp4" type="video/mp4" media="(max-width: 767px)"> -->
-      <source src="assets/intro-video.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <!-- <img src="assets/www.reallygreatsite.som.png" class="hero-video"> -->
-      
-
-    <!-- <div class="overlay-content">
+      <!-- <div class="overlay-content">
       <h1>Welcome to Our Pet World</h1>
       <p>Explore pets, their care, and more</p>
     </div> -->
-  </section>
-  <section class="pet-selector">
-    <h2>Choose Your Companion</h2>
-    <div class="pet-options">
-      <button onclick="showBreeds('dog')">🐶 Dogs</button>
-      <button onclick="showBreeds('cat')">🐱 Cats</button>
-    </div>
-  </section>
-  <section id="breeds-section" class="breeds hidden">
-    <h2 id="breed-title"></h2>
-    <div class="breed-grid" id="breedGrid"></div>
-  </section>
-  <div id="breedModal" class="modal hidden">
-    <div class="modal-content">
-      <span onclick="closeModal()" class="close-btn">&times;</span>
-      <img id="modalImg" alt="">
-      <h3 id="modalTitle"></h3>
-      <p id="modalDesc"></p>
-    </div>
-  </div>
-  <section id="care-tips" class="tips-section">
-    <h2>🐾 Pet Care Tips</h2>
-
-    <div class="tip-toggle">
-      <button onclick="toggleTips('dog')" id="dogBtn" class="active">Dog's Tips</button>
-      <button onclick="toggleTips('cat')" id="catBtn">Cat's Tips</button>
-    </div>
-
-    <div id="dogTips" class="accordion-box">
-      <h3>🐶 Dog Health Tips</h3>
-      <div class="accordion-item">
-        <button class="accordion-header">Regular Vet Checkups</button>
-        <div class="accordion-body">Yearly vaccinations and parasite control.</div>
+    </section>
+    <section class="main">
+      <img src="assets/PhotoEaraser.jpg" />
+    </section>
+    <section class="pet-selector">
+      <h2>Choose Your Companion</h2>
+      <div class="pet-options">
+        <button onclick="showBreeds('dog')">🐶 Dogs</button>
+        <button onclick="showBreeds('cat')">🐱 Cats</button>
       </div>
-      <div class="accordion-item">
-        <button class="accordion-header">Dental Care</button>
-        <div class="accordion-body">Brush your dog’s teeth 2–3 times a week.</div>
-      </div>
-      <div class="accordion-item">
-        <button class="accordion-header">Exercise Needs</button>
-        <div class="accordion-body">30–60 mins daily depending on breed.</div>
-      </div>
-      <div class="accordion-item">
-        <button class="accordion-header">Common Illness Signs</button>
-        <div class="accordion-body">Vomiting, lethargy, limping.</div>
-      </div>
-      <div class="accordion-item">
-        <button class="accordion-header">Nutrition</button>
-        <div class="accordion-body">Avoid chocolate, onions, and grapes.</div>
+    </section>
+    <section id="breeds-section" class="breeds hidden">
+      <h2 id="breed-title"></h2>
+      <div class="breed-grid" id="breedGrid"></div>
+    </section>
+    <div id="breedModal" class="modal hidden">
+      <div class="modal-content">
+        <span onclick="closeModal()" class="close-btn">&times;</span>
+        <img id="modalImg" alt="" />
+        <h3 id="modalTitle"></h3>
+        <p id="modalDesc"></p>
       </div>
     </div>
-
-    <div id="catTips" class="accordion-box hidden">
-      <h3>🐱 Cat Health Tips</h3>
-      <div class="accordion-item">
-        <button class="accordion-header">Vaccinations</button>
-        <div class="accordion-body">Protect against Feline Distemper, Rabies.</div>
-      </div>
-      <div class="accordion-item">
-        <button class="accordion-header">Grooming</button>
-        <div class="accordion-body">Regular brushing, especially for long-haired breeds.</div>
-      </div>
-      <div class="accordion-item">
-        <button class="accordion-header">Litter Box Hygiene</button>
-        <div class="accordion-body">Scoop daily and sanitize weekly.</div>
-      </div>
-      <div class="accordion-item">
-        <button class="accordion-header">Stress Management</button>
-        <div class="accordion-body">Cats dislike change; use scratching posts and hideaways.</div>
-      </div>
-      <div class="accordion-item">
-        <button class="accordion-header">Warning Signs</button>
-        <div class="accordion-body">Sudden hiding, aggression, weight loss.</div>
-      </div>
-    </div>
-  </section>
-  <footer class="site-footer">
-    <div class="footer-content">
-      <div class="footer-brand">
-        <h2>Pet's Heaven</h2>
-        <h4>We Care About Your Pets...</h4>
-      </div>
-
-      <div class="footer-links">
-        <h4>Quick Links</h4>
+    <section class="services">
+      <div class="pet-service">
+        <h1>Our Services</h1>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Shop</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Contact</a></li>
+          <li>Pets</li>
+          <li>Pets Food</li>
+          <li>Pet Accessories</li>
+          <li>Pet Grooming</li>
+          <li>Pet Walker</li>
         </ul>
       </div>
+    </section>
 
-      <div class="footer-contact">
-        <h4>Contact Us</h4>
-        <p>📞 +91 8850275587</p>
-        <p>📧 Mail</p>
-        <div class="footer-social">
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" /></a>
+    <section id="care-tips" class="tips-section">
+      <h2>🐾 Pet Care Tips</h2>
+
+      <div class="tip-toggle">
+        <button onclick="toggleTips('dog')" id="dogBtn" class="active">
+          Dog's Tips
+        </button>
+        <button onclick="toggleTips('cat')" id="catBtn">Cat's Tips</button>
+      </div>
+
+      <div id="dogTips" class="accordion-box">
+        <div class="petInfo">
+          <img src="assets/dogs.jpg" />
+          <h3>Dog Health Tips</h3>
+          <div class="accordion-item">
+            <button class="accordion-header">Regular Vet Checkups</button>
+            <div class="accordion-body">
+              Yearly vaccinations and parasite control.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">Dental Care</button>
+            <div class="accordion-body">
+              Brush your dog’s teeth 2–3 times a week.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">Exercise Needs</button>
+            <div class="accordion-body">
+              30–60 mins daily depending on breed.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">Common Illness Signs</button>
+            <div class="accordion-body">Vomiting, lethargy, limping.</div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">Nutrition</button>
+            <div class="accordion-body">
+              Avoid chocolate, onions, and grapes.
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 Pet's Heaven. All rights reserved.</p>
-    </div>
-  </footer>
 
+      <div id="catTips" class="accordion-box hidden">
+        <div class="petInfo">
+          <img src="assets/cats.jpg" />
+          <h3>Cat Health Tips</h3>
+          <div class="accordion-item">
+            <button class="accordion-header">Vaccinations</button>
+            <div class="accordion-body">
+              Protect against Feline Distemper, Rabies.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">Grooming</button>
+            <div class="accordion-body">
+              Regular brushing, especially for long-haired breeds.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">Litter Box Hygiene</button>
+            <div class="accordion-body">Scoop daily and sanitize weekly.</div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">Stress Management</button>
+            <div class="accordion-body">
+              Cats dislike change; use scratching posts and hideaways.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">Warning Signs</button>
+            <div class="accordion-body">
+              Sudden hiding, aggression, weight loss.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h2>Pet's Heaven</h2>
+          <h4>We Care About Your Pets...</h4>
+        </div>
+        <div class="footer-sections">
+          <div class="footer-address">
+            <h1>PETS HEAVEN</h1>
+            <p>
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/535/535137.png"
+                alt="location"
+                style="width: 16px; vertical-align: middle; margin-right: 5px"
+              />
+              Sai Sansar Complex, Shop No. 05,<br />
+              Plot No. 30, Sector - 05,<br />
+              Behind D-Mart, New Panvel (E),<br />
+              Raigad - 410206
+            </p>
+          </div>
 
+          <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Shop</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
 
-</body>
-
+          <div class="footer-contact">
+            <h4>Contact Us</h4>
+            <p>👤 Nilesh Pagare</p>
+            <p>📞 +91 8850275587</p>
+            <div class="footer-social">
+              <a href="#"><img src="assets/email.jpg" alt="email" /></a>
+              <a href="#"
+                ><img
+                  src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png"
+                  alt="Instagram"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Pet's Heaven. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
 </html>

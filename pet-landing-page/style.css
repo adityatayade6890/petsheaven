@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   background-color: #fdfaf6;
   color: #333;
   width: 100vw;
@@ -37,17 +37,19 @@ body {
   font-size: 1.2rem;
   margin-top: 10px;
 }
-
-
+.main img {
+  height: 100%;
+  width: 100%;
+}
 .pet-selector {
   padding-top: 0px;
   padding: 2rem;
   text-align: center;
-  background:linear-gradient(#fdf4ec);
+  background: linear-gradient(#fdf4ec);
 }
 
 .pet-options button {
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 1.5rem;
   margin: 0.5rem;
   padding: 0.5rem 0.5rem;
@@ -57,7 +59,7 @@ body {
   color: white;
   cursor: pointer;
   transition: transform 0.3s ease;
-  width: 180px; 
+  width: 180px;
   height: 80px;
 }
 
@@ -80,17 +82,14 @@ body {
 }
 
 .breed-card {
-  
   padding-bottom: 15px;
-  background: #a1f534;
+  background: #ffe4ca;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
   text-align: center;
   cursor: pointer;
-  
-
 }
 
 .breed-card:hover {
@@ -99,9 +98,8 @@ body {
 
 .breed-card img {
   width: 100%;
-  height: 80%;
+  height: 70%;
   object-fit: cover;
-
 }
 
 .modal {
@@ -119,7 +117,7 @@ body {
 
 .modal-content {
   position: relative;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   padding: 20px;
   background-color: #fff;
   border-radius: 12px;
@@ -154,12 +152,11 @@ body {
   padding: 20px 20px;
   background: #fff8f0;
   text-align: center;
-  font-family: 'Segoe UI', sans-serif;
-  
+  font-family: "Segoe UI", sans-serif;
 }
 
 .tip-toggle {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .tip-toggle button {
@@ -172,7 +169,7 @@ body {
   font-weight: bold;
   font-size: 1.3rem;
   cursor: pointer;
-  width: 180px; 
+  width: 180px;
   height: 80px;
   transition: transform 0.3s;
 }
@@ -180,6 +177,92 @@ body {
 .tip-toggle button.active,
 .tip-toggle button:hover {
   background-color: #ff914d;
+}
+
+.services {
+  background-image: url("assets/petServices.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 60px 20px;
+  transition: background 0.5s ease-in-out, transform 0.5s ease;
+  color: #fff;
+}
+
+.services:hover {
+  transform: scale(1.01);
+}
+
+.pet-service {
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 600px;
+  margin-left: 40px;
+  transition: background-color 0.3s ease;
+}
+
+.pet-service h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  margin-left: 40px;
+}
+
+.pet-service ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.pet-service li {
+  position: relative;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin: 10px 0;
+  padding-left: 25px;
+  transition: color 0.3s ease;
+}
+
+.pet-service li::before {
+  content: "➤";
+  position: absolute;
+  left: 0;
+  color: #ffcc00;
+  transition: transform 0.3s ease;
+}
+
+.pet-service li:hover::before {
+  transform: translateX(5px);
+}
+
+.pet-service li:hover {
+  color: #ffd700;
+}
+
+.petInfo {
+  position: relative;
+  padding-top: 80px;
+  text-align: center;
+  background-color: rgb(253, 225, 230);
+}
+.petInfo img {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 160px;
+  border-radius: 10%;
+  z-index: 2;
+}
+
+.petInfo h3 {
+  padding: 15px 0px;
+  display: inline-block;
+  border-radius: 8px;
+  font-size: 26px;
+  color: #333;
+  margin-top: 12px;
+  margin-bottom: 1px;
+  z-index: 1;
+  position: relative;
 }
 
 .accordion-box {
@@ -223,66 +306,105 @@ body {
 }
 
 .site-footer {
-  background-color: #fff4e6;
-  padding: 40px 20px 20px;
-  font-family: 'Segoe UI', sans-serif;
-  color: #333;
+  padding: 10px;
+  font-family: "Segoe UI", sans-serif;
+  color: orange;
+  position: relative;
+  border-radius: 12px;
+  animation: fadeIn 1.2s ease;
+  overflow: hidden;
+  background: linear-gradient(180deg, blue 0%, white 50%, orange 100%);
+}
+
+.site-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
 }
 
 .footer-content {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 30px;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0px;
+  margin-bottom: 30px;
   max-width: 1200px;
   margin: auto;
+  position: relative;
+  z-index: 1;
+  animation: slideUp 1.3s ease;
 }
 
-.footer-brand h2 {
-  font-size: 28px;
-  color: #ff914d;
+.footer-brand {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.footer-address {
+  color: black;
+  font-family: "Segoe UI", sans-serif;
 }
 
-.footer-brand p {
-  margin-top: 10px;
-  font-size: 14px;
-  color: #666;
+.footer-address h1 {
+  font-family: "Georgia", serif;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.footer-brand h4 {
+  font-size: 16px;
+  color: #000;
+  margin-top: 5px;
 }
 
 .footer-links h4,
 .footer-contact h4 {
-  margin-bottom: 10px;
-  font-size: 16px;
-  color: #333;
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #000;
 }
 
 .footer-links ul {
   list-style: none;
   padding: 0;
-}
-
-.footer-links li {
-  margin: 6px 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
 }
 
 .footer-links a {
   text-decoration: none;
-  color: #666;
-  transition: color 0.3s ease;
+  color: #000;
+  padding: 5px 10px;
+  border-radius: 6px;
+  transition: background 0.3s, transform 0.3s;
 }
 
 .footer-links a:hover {
-  color: #ff914d;
+  background-color: #000;
+  color: RED;
+  transform: scale(1.1);
 }
 
 .footer-contact p {
   margin: 5px 0;
   font-size: 14px;
+  color: #000;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1px;
+  margin-top: 14px;
 }
 
 .footer-social a img {
-  width: 24px;
-  margin-right: 10px;
+  width: 28px;
+  margin-right: 20px;
   transition: transform 0.3s ease;
 }
 
@@ -292,14 +414,23 @@ body {
 
 .footer-bottom {
   text-align: center;
-  margin-top: 30px;
-  font-size: 13px;
-  color: #888;
-  border-top: 1px solid #eee;
-  padding-top: 10px;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #000;
+  padding-top: 15px;
+  border-top: 2px solid black;
 }
 
-/* Mobile Responsive */
+.footer-sections {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+/* Responsive behavior */
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
@@ -307,30 +438,35 @@ body {
     text-align: center;
   }
 
-  .footer-social a img {
-    margin: 8px;
-  }
-}
-
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
+  .footer-sections {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    margin-top: 10px;
   }
 
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideUp {
-  from {
-    transform: translateY(100px);
-    opacity: 0;
+  .footer-links ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 0;
+    list-style: none;
+    justify-items: center;
   }
 
-  to {
-    transform: translateY(0);
-    opacity: 1;
+  .footer-social {
+    justify-content: center;
+  }
+  .tip-toggle {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 50px;
+  }
+
+  .tip-toggle button {
+    margin: 10px;
   }
 }
